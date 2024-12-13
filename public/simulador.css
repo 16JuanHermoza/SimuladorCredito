@@ -1,0 +1,178 @@
+.inicio {
+    height: 3em;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+}
+
+.link-img {
+    display: block;
+    height: 3em;
+    margin-left: 0em;
+    background-size: 10em;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url("../public/images.png");
+}
+
+
+.invierte {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: yellow;
+    text-align: center;
+    text-decoration: none;
+    font-size: 12px;
+    border-radius: 9px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: none;
+    cursor: pointer;
+    color: rgb(15, 38, 92);
+}
+
+body {
+    background-color: rgba(255, 248, 204, 255);
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.contenedor {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 5em auto;
+    gap: 20px;
+}
+
+.texto_img {
+    width: 29em;
+    height: 25em;
+    background-color: rgba(255, 248, 204, 255);
+    background-image: url("../public/señorita.png");
+    background-repeat: no-repeat;
+    background-size: 15em;
+    background-position: 6em 12em;
+    margin-left: 11em;
+}
+
+.texto_img h1 {
+    color: rgb(15, 38, 92);
+    font-size: 24px;
+}
+
+.texto_img p {
+    color: black;
+    font-size: 14px;
+    margin: 10px 0;
+}
+
+.simulador {
+    width: 28em;
+    height: 30em;
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid black;
+    border-radius: 5px;
+    text-align: center;
+    padding: 1em;
+    margin-right: 11em;
+}
+
+.simulador h2 {
+    font-size: 16px;
+    color: rgb(15, 38, 92);
+    margin-bottom: 10px;
+}
+
+.simulador p {
+    color: black;
+    font-size: 14px;
+    margin: 10px 0;
+}
+
+.simulador input {
+    width: 80%;
+    padding: 5px;
+    margin: 10px 0;
+    border: none;
+    border-bottom: 1px solid black;
+    font-size: 16px;
+    outline: none;
+}
+
+.simulador button {
+    padding: 10px 15px;
+    margin: 10px 5px;
+    border: 1px solid rgb(0, 98, 255);
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.simulador button:active {
+    background-color: rgb(235, 235, 235);
+
+
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    color: yellow;
+    background-color: #333;
+    width: 100%;
+    margin-top: auto;
+}
+
+.botones {
+    width: 300px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: center;
+}
+.menu {
+    display: none;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: left;
+}
+
+.menu button {
+    display: block;
+    width: 100%;
+    margin: 5px 0;
+    text-align: left;
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.menu button:hover {
+    background-color: #ececec;
+}
+.otro-plazo {
+    display: none;
+    margin-top: 10px;
+    text-align: left;
+}
+
+.otro-plazo input {
+    width: calc(100% - 20px);
+    padding: 8px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.error {
+    color: red;
+    font-size: 14px;
+}
