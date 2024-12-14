@@ -73,56 +73,54 @@
         const tipoPlazo = document.getElementById('tipoPlazo');
         const errorMsg = document.getElementById('errorMsg');
         const errorMsg1 = document.getElementById('errorMsg1');
-        let monto = 0; // Valor del monto ingresado
-        let plazo = 0; // Valor del plazo ingresado
-        let plazoTipo = ''; // Tipo de plazo seleccionado: "meses" o "días"
-        // Mostrar/ocultar menú de "Meses"
+        let monto = 0; 
+        let plazo = 0; 
+        let plazoTipo = ''; 
         mesesBtn.addEventListener('click', () => {
             toggleMenu(mesesMenu);
             diasMenu.style.display = 'none';
             otroPlazo.style.display = 'none';
         });
-        // Mostrar/ocultar menú de "Días"
+        // Mostrar/ocultar menú de "Dias"
         diasBtn.addEventListener('click', () => {
             toggleMenu(diasMenu);
             mesesMenu.style.display = 'none';
             otroPlazo.style.display = 'none';
         });
-        // Selección de plazos predefinidos (botones)
+       
         const botonesMeses = mesesMenu.querySelectorAll('button:not(#otroMesesBtn)');
         const botonesDias = diasMenu.querySelectorAll('button:not(#otroDiasBtn)');
 
         botonesMeses.forEach((btn) => {
             btn.addEventListener('click', () => {
                 plazoTipo = 'meses';
-                plazo = parseInt(btn.textContent.split(' ')[0]); // Extraer número del texto del botón
-                ocultarMenus(); // Minimizar menús automáticamente
+                plazo = parseInt(btn.textContent.split(' ')[0]); 
+                ocultarMenus(); 
                 verificarCamposYCalcular();
             });
         });
         botonesDias.forEach((btn) => {
             btn.addEventListener('click', () => {
                 plazoTipo = 'días';
-                plazo = parseInt(btn.textContent.split(' ')[0]); // Extraer número del texto del botón
-                ocultarMenus(); // Minimizar menús automáticamente
+                plazo = parseInt(btn.textContent.split(' ')[0]); 
+                ocultarMenus();
                 verificarCamposYCalcular();
             });
         });
-        // Mostrar campo para "Otro Plazo" en meses
         otroMesesBtn.addEventListener('click', () => {
             tipoPlazo.textContent = 'meses';
             plazoTipo = 'meses';
             otroPlazo.style.display = 'block';
             mesesMenu.style.display = 'none';
         });
-        // Mostrar campo para "Otro Plazo" en días
+        
         otroDiasBtn.addEventListener('click', () => {
             tipoPlazo.textContent = 'días';
             plazoTipo = 'días';
             otroPlazo.style.display = 'block';
             diasMenu.style.display = 'none';
         });
-        // Validar entrada del plazo personalizado
+        
         inputPlazo.addEventListener('input', () => {
             const plazoValue = parseInt(inputPlazo.value);
             if (isNaN(plazoValue)) {
@@ -134,11 +132,11 @@
             } else {
                 errorMsg.textContent = '';
                 plazo = plazoValue;
-                ocultarMenus(); // Minimizar menús automáticamente
+                ocultarMenus(); 
                 verificarCamposYCalcular();
             }
         });
-        // Validar monto a invertir
+        
         inputMonto.addEventListener('input', () => {
             const montoValue = parseFloat(inputMonto.value);
             if (isNaN(montoValue)) {
@@ -153,33 +151,31 @@
                 verificarCamposYCalcular();
             }
         });
-        // Ocultar todos los menús
+        
         function ocultarMenus() {
             mesesMenu.style.display = 'none';
             diasMenu.style.display = 'none';
             otroPlazo.style.display = 'none';
         }
-        // Alternar la visibilidad de un menú
+        
         function toggleMenu(menu) {
             menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
         }
-        // Verificar si los campos son válidos y calcular el plazo fijo
         function verificarCamposYCalcular() {
             if (monto > 0 && plazo > 0) {
                 calcularPlazoFijo();
             }
         }
-        // Cálculo dinámico del plazo fijo
         function calcularPlazoFijo() {
-            const tasaInteres = 0.05; // Tasa de interés simulada (5% anual)
+            const tasaInteres = 0.05;
             let periodo = 0;
-            // Convertir el plazo al equivalente en años según el tipo
+       
             if (plazoTipo === 'meses') {
-                periodo = plazo / 12; // Meses a años
+                periodo = plazo / 12; 
             } else if (plazoTipo === 'días') {
-                periodo = plazo / 365; // Días a años
+                periodo = plazo / 365; 
             }
-            const resultado = monto * (1 + tasaInteres * periodo); // Fórmula de interés simple
+            const resultado = monto * (1 + tasaInteres * periodo); 
             alert(`Con una inversión de $${monto.toFixed(2)} y un plazo de ${plazo} ${plazoTipo}, obtendrás: $${resultado.toFixed(2)}.`);
         }
     </script>
