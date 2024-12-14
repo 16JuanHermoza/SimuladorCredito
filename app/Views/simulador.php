@@ -29,24 +29,18 @@
                 <h2>Selecciona el tipo de plazo</h2>
                 <button id="mesesBtn">Meses</button>
                 <button id="diasBtn">Días</button>
-
-                <!-- Menú desplegable para "Meses" -->
                 <div id="mesesMenu" class="menu">
                     <button>12 Meses</button>
                     <button>9 Meses</button>
                     <button>6 Meses</button>
                     <button id="otroMesesBtn">Otro Plazo</button>
                 </div>
-
-                <!-- Menú desplegable para "Días" -->
                 <div id="diasMenu" class="menu">
                     <button>30 Días</button>
                     <button>60 Días</button>
                     <button>90 Días</button>
                     <button id="otroDiasBtn">Otro Plazo</button>
                 </div>
-
-                <!-- Campo para ingresar otro plazo -->
                 <div id="otroPlazo" class="otro-plazo">
                     <label for="inputPlazo">Ingresa el número de <span id="tipoPlazo"></span>:</label>
                     <input type="number" id="inputPlazo" />
@@ -60,7 +54,6 @@
         <p>&copy; 2024 Banco Pichicncha</p>
     </footer>
     <script>
-        // Referencias a elementos principales
         const inputMonto = document.getElementById('monto');
         const mesesBtn = document.getElementById('mesesBtn');
         const diasBtn = document.getElementById('diasBtn');
@@ -81,7 +74,6 @@
             diasMenu.style.display = 'none';
             otroPlazo.style.display = 'none';
         });
-        // Mostrar/ocultar menú de "Dias"
         diasBtn.addEventListener('click', () => {
             toggleMenu(diasMenu);
             mesesMenu.style.display = 'none';
